@@ -15,6 +15,7 @@
                 <th scope="col">Slug</th>
                 <th scope="col">Created</th>
                 <th scope="col">Updated</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -26,7 +27,7 @@
                     <td>{{ $project->created_at }}</td>
                     <td>{{ $project->updated_at }}</td>
                     <td>
-                        <a href="{{ route('admin.project.show', $project->id) }}" class="btn btn-small btn-primary">
+                        <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-small btn-primary">
                             <i class="fa-solid fa-eye"></i>
                         </a>
                     </td>
