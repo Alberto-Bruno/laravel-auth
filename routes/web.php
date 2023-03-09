@@ -25,7 +25,7 @@ Route::middleware(['auth'])->name('admin.')->prefix('admin')->group(function () 
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
 
     // Route project
-    Route::resource('project', ProjectController::class);
+    Route::resource('projects', ProjectController::class);
 });
 
 
