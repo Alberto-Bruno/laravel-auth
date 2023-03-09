@@ -15,7 +15,7 @@ class ProjectController extends Controller
     {
         $projects = Project::orderBy('updated_at', 'DESC')->get();
 
-        return view('admin.projects.index', compact('projects'));
+        return view('admin.projects.index', compact('project'));
     }
 
     /**
