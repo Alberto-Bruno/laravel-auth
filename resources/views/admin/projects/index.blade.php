@@ -18,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            @forelse($project as $projects)
+            @forelse($projects as $project)
                 <tr>
                     <th scope="row">{{ $project->id }}</th>
                     <td>{{ $project->title }}</td>
