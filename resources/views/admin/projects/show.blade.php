@@ -19,6 +19,11 @@
         </div>
         <div class="d-flex justify-content-end">
 
+            <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-warning me-2 text-white">
+                <i class="fas fa-pencil me-2"></i>
+                Edit
+            </a>
+
             <form action="PROJECT" action="{{ route('admin.projects.destroy', $project->id) }}" class="delete-form"
                 data-entity="project">
                 @csrf

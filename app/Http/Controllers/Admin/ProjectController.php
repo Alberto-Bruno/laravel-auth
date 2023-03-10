@@ -40,7 +40,10 @@ class ProjectController extends Controller
         $project->fill($data);
 
         $project->save();
-        return to_route('admin.projects.show', $project->id);
+
+        return to_route('admin.projects.show', $project->id)
+            ->with('type', 'success')
+            ->with('New project created');
     }
 
     /**
@@ -54,9 +57,9 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**

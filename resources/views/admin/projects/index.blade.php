@@ -35,6 +35,11 @@
                             <i class="fa-solid fa-eye"></i>
                         </a>
 
+                        <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-warning ms-2 text-white">
+                            <i class="fas fa-pencil me-2"></i>
+                            Edit
+                        </a>
+
                         <form action="PROJECT" action="{{ route('admin.projects.destroy', $project->id) }}"
                             class="delete-form" data-entity="project">
                             @csrf
