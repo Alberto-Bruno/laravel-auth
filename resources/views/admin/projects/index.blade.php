@@ -31,7 +31,8 @@
                             <i class="fa-solid fa-eye"></i>
                         </a>
 
-                        <form action="PROJECT" action="{{ route('admin.projects.destroy', $project->id) }}">
+                        <form action="PROJECT" action="{{ route('admin.projects.destroy', $project->id) }}"
+                            class="delete-form" data-entity="project">
                             @csrf
                             @method('DELETE')
                             <button class="ms-2 btn btn-small btn-danger" type="submit">
@@ -51,5 +52,16 @@
 
 
 @section('scripts')
-    <script></script>
+    <script>
+        // Prendo i Button dal Dom
+        const deleteForms = document.querySelectorAll('.delete-form');
+        deleteForms.forEach(form => {
+            form.addEventListner('submit', e => {
+                e.preventDefault();
+                const entity = form.getAttribute('data-entity') || 'progetto'
+                const hasConfirmed = confirm(`Sei sicuro di voler eliminare questo progetto ${entity}?`);
+                if (hasConfirmed) form.submit();
+            });
+        });
+    </script>
 @endsection
