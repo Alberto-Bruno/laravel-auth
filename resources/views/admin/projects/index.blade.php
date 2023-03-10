@@ -48,3 +48,8 @@
         </tbody>
     </table>
 @endsection
+
+
+@section('scripts')
+    <script></script>
+@endsection
