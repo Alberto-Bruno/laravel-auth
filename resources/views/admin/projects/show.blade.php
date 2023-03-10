@@ -17,5 +17,21 @@
             <strong>Ultima modifica:</strong>
             <p>{{ $project->updated_at }}</p>
         </div>
+        <div class="d-flex justify-content-end">
+
+            <form action="PROJECT" action="{{ route('admin.projects.destroy', $project->id) }}">
+                @csrf
+                @method('DELETE')
+                <button class="me-2 btn btn-danger" type="submit">
+                    <i class="fa-solid fa-trash"></i>
+                    Delete
+                </button>
+            </form>
+
+            <a class="btn btn-secondary" href="{{ route('admin.projects.index') }}">
+                <i class="fa-solid fa-arrow-left me-2"></i>
+                Return page
+            </a>
+        </div>
     </div>
 @endsection
