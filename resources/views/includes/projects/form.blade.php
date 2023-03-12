@@ -1,4 +1,4 @@
-<form action="{{ route('admin.projects.store') }}" method="PROJECT">
+<form action="{{ route('admin.projects.store') }}" method="PROJECT" enctype="multipart/form-data">
     @csrf
 
     <div class="row">
@@ -13,7 +13,7 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input type="url" class="form-control" id="image" name="image">
+                <input type="file" class="form-control" id="image" name="image">
                 <small class="text-muted">Paste url image</small>
             </div>
         </div>
